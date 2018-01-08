@@ -17,6 +17,14 @@ function gamepadHandler(event, connecting) {
   }
 }
 
+/*Gamepad Threshold*/
+var correctSensitivity = function(number, threshold){
+  percentage = (Math.abs(number) - threshold) / (1 - threshold);
+  if(percentage < 0)
+     percentage = 0;
+  return percentage * (number > 0 ? 1 : -1);
+}
+
 /*start*/
 document.addEventListener('DOMContentLoaded', function() {
   init(); 
@@ -31,8 +39,17 @@ function init(){
 }
 
 function gameloop(){
-    if(gamepads[0] != null){
-       eye_l.setAttribute('transform', 'translate('+ gamepads[0].axes[0] *5 +', '+ gamepads[0].axes[1]*5 +')');
+  gamepad = navigator.getGamepads()[0];
+  if(gamepad){
+    ax0 = correctSensitivity(gamepad);
+    ax1 = correctSensitivity();
+    ax2 = correctSensitivity();
+    ax3 = correctSensitivity();
+  
+
+    if(gamepad.[0].pressed){
+      console.log('A');
     }
-    window.requestAnimationFrame(gameloop)
+  }
+  window.requestAnimationFrame(gameloop)
 }
