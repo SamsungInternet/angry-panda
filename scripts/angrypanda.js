@@ -35,8 +35,6 @@ function init(){
     eye_l = document.getElementById("eye_L");
     eye_r = document.getElementById("eye_R");
 
-    
-    
     gameloop();
 }
 
@@ -54,6 +52,7 @@ function gameloop(){
   
 
     if(gamepad.buttons[0].pressed){
+      //open mouth
       console.log('A');
     }
   }
