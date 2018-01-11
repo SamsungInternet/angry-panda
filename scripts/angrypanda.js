@@ -22,7 +22,7 @@ var correctSensitivity = function(number, threshold){
   percentage = (Math.abs(number) - threshold) / (1 - threshold);
   if(percentage < 0)
      percentage = 0;
-  return percentage * (number > 0 ? 1 : -1);
+  return (percentage * (number > 0 ? 1 : -1)).toFixed(2);
 }
 
 /*start*/
@@ -34,6 +34,8 @@ document.addEventListener('DOMContentLoaded', function() {
 function init(){
     eye_l = document.getElementById("eye_L");
     eye_r = document.getElementById("eye_R");
+
+    
     
     gameloop();
 }
@@ -41,13 +43,17 @@ function init(){
 function gameloop(){
   gamepad = navigator.getGamepads()[0];
   if(gamepad){
-    ax0 = correctSensitivity(gamepad);
-    ax1 = correctSensitivity();
-    ax2 = correctSensitivity();
-    ax3 = correctSensitivity();
+    ax0 = correctSensitivity(gamepad.axes[0], 0.25) * 3;
+    ax1 = correctSensitivity(gamepad.axes[1], 0.25) * 2.5;
+    ax2 = correctSensitivity(gamepad.axes[2], 0.25) * 3;
+    ax3 = correctSensitivity(gamepad.axes[3], 0.25) * 2.5;
+
+
+    eye_l.setAttribute('transform', 'translate('+ ax0 + ' ' + ax1 +')');
+    eye_r.setAttribute('transform', 'translate('+ ax2 + ' ' + ax3 +')');
   
 
-    if(gamepad.[0].pressed){
+    if(gamepad.buttons[0].pressed){
       console.log('A');
     }
   }
