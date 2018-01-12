@@ -24,9 +24,24 @@ h1{
 
 #gamepadStatusDiv{
   text-align: center;
+  padding: .5em;
+}
+
+#gamepadStatusDiv{
+  text-align: center;
+  padding: .5em;
+}
+
+.gpconnected{
+  background-color: lightgreen;
+  color: darkgreen; 
+  transition: color .5s ease-in, background-color .5s ease-in;
+}
+
+.gpidle{
   background-color: khaki;
   color: darkgoldenrod; 
-  padding: .5em;
+  transition: color .5s ease-in, background-color .5s ease-in;
 }
 
 #gpicon{

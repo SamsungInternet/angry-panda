@@ -10,10 +10,14 @@ function gamepadHandler(event, connecting) {
   var gamepad = event.gamepad;
   if (connecting) {
     gamepads[gamepad.index] = gamepad;
-    console.log(gamepad.index + ' connected');
+    document.querySelector('#connTxt').innerText = gamepad.id + ' connected';
+    document.querySelector('#gamepadStatusDiv').classList.add('gpconnected');
+    document.querySelector('#gamepadStatusDiv').classList.remove('gpidle');
   } else {
     delete gamepads[gamepad.index];
-    console.log(gamepad.index + ' disconnected');
+    document.querySelector('#connTxt').innerText = 'Waiting for new Gamepad connection...';
+    document.querySelector('#gamepadStatusDiv').classList.remove('gpconnected');
+    document.querySelector('#gamepadStatusDiv').classList.add('gpidle');
   }
 }
 
