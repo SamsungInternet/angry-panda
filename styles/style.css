@@ -36,12 +36,14 @@ h1{
   background-color: lightgreen;
   color: darkgreen; 
   transition: color .5s ease-in, background-color .5s ease-in;
+  stroke: darkgreen;
 }
 
 .gpidle{
   background-color: khaki;
   color: darkgoldenrod; 
   transition: color .5s ease-in, background-color .5s ease-in;
+  stroke: darkgoldenrod;
 }
 
 #gpicon{

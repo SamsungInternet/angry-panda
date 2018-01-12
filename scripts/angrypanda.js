@@ -13,11 +13,15 @@ function gamepadHandler(event, connecting) {
     document.querySelector('#connTxt').innerText = gamepad.id + ' connected';
     document.querySelector('#gamepadStatusDiv').classList.add('gpconnected');
     document.querySelector('#gamepadStatusDiv').classList.remove('gpidle');
+    document.querySelector('#gpsvg').classList.add('gpconnected');
+    document.querySelector('#gpsvg').classList.remove('gpidle');
   } else {
     delete gamepads[gamepad.index];
     document.querySelector('#connTxt').innerText = 'Waiting for new Gamepad connection...';
     document.querySelector('#gamepadStatusDiv').classList.remove('gpconnected');
     document.querySelector('#gamepadStatusDiv').classList.add('gpidle');
+    document.querySelector('#gpsvg').classList.remove('gpconnected');
+    document.querySelector('#gpsvg').classList.add('gpidle');
   }
 }
 
