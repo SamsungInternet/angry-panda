@@ -3,8 +3,8 @@ body{
   }
   
   #divpanda{
-    height:400px;
-    width:400px;
-    padding:3em;
+    height:100%;
+    width:80%;
+    padding:1em;
     margin:auto;
   }
