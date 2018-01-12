@@ -1,10 +1,41 @@
 body{
-    background-color:#3d3d3d;
-  }
+  background-color:#3d3d3d;
+  font-family:'Samsung One';
+  margin:0px;
+  padding: 0px;
+}
+
+html{
+  color:#fff;
+}
+
+h1{
+  font-family: 'Pacifico', cursive;
+  margin:auto;
+  text-align: center;
+}
   
-  #divpanda{
-    height:100%;
-    width:80%;
-    padding:1em;
-    margin:auto;
-  }
+#divpanda{
+  max-height: 400px;
+  max-width: 400px;
+  padding:1em;
+  margin:auto;
+}
+
+#gamepadStatusDiv{
+  text-align: center;
+  background-color: khaki;
+  color: darkgoldenrod; 
+  padding: .5em;
+}
+
+#gpicon{
+  max-height: 1em;
+}
+
+.purpNugIcon{
+  max-height: 3.5em;
+  position: absolute;
+  bottom:0.5em;
+  right: 0.5em;
+}
